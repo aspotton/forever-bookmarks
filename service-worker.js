@@ -33,8 +33,13 @@ function onErrorOccurred(details) {
   // Only catch load errors when the initial request fails (server not available, site no longer exists, etc.)
   // frameId != 0 request is not from the main/initial frame in the HTML document
   // tabId == -1 the request is not related to an open tab (for an extension, background process)
-  if (details.frameId != 0 || details.tabId == -1 || details.type != 'main_frame' || details.error == 'net::ERR_ABORTED') {
+  if (details.frameId != 0 || details.tabId == -1 || details.type != 'main_frame') {
     //console.log('Would not catch this error');
+    return;
+  }
+
+  var ignored_types = ['net::ERR_ABORTED', 'net::ERR_CERT_COMMON_NAME_INVALID'];
+  if (ignored_types.include(details.error)) {
     return;
   }
 
