@@ -39,7 +39,7 @@ function onErrorOccurred(details) {
   }
 
   var ignored_types = ['net::ERR_ABORTED', 'net::ERR_CERT_COMMON_NAME_INVALID'];
-  if (ignored_types.include(details.error)) {
+  if (ignored_types.includes(details.error)) {
     return;
   }
 
