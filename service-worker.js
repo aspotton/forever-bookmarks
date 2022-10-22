@@ -38,8 +38,16 @@ function onErrorOccurred(details) {
     return;
   }
 
-  var ignored_types = ['net::ERR_ABORTED', 'net::ERR_CERT_COMMON_NAME_INVALID'];
-  if (ignored_types.includes(details.error)) {
+  // Error types to capture
+  var valid_types = [
+    'net::ERR_NAME_NOT_RESOLVED',
+    'net::ERR_CONNECTION_TIMED_OUT',
+    'net::ERR_CONNECTION_RESET',
+    'net::ERR_CONNECTION_REFUSED',
+    'net::ERR_EMPTY_RESPONSE'
+  ];
+
+  if (!valid_types.includes(details.error)) {
     return;
   }
 
