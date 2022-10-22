@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Forever Bookmarks",
+    "description": "Make your bookmarks future proof and always available even if the original site doesn't exist anymore",
+    "version": "0.0.1",
+
+    "permissions": [
+        "bookmarks",
+        "tabs",
+        "webRequest"
+    ],
+
+    "host_permissions": [
+        "https://web.archive.org/*",
+        "http://*/*",
+        "https://*/*"
+    ],
+
+    "background": {
+        "service_worker": "service-worker.js"
+    },
+
+    "web_accessible_resources": [{
+      "resources": [ "unavailable.html", "unavailable.js" ],
+      "use_dynamic_url": true
+    }]
+}
