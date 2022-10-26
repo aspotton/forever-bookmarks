@@ -2,14 +2,25 @@
 <html>
   <head>
     <title>Site Unavailable</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script defer src="js/bootstrap.min.js"></script>
   </head>
   <body>
     <div>
-      <center>
-        <strong><p id="URL"></p></strong>
-        <strong><p>The site is unavailable, loading the most recent cached version from the Internet Archive ...</p></strong>
-      </center>
+      <div class="card text-center">
+        <div class="card-header">
+          <p>Website Unavailable</p>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title" id="URL"></h5>
+          <p class="card-text">The website is not available but a recent cached version of its content might be available at the Internet Archive.</p>
+          <a id="IAButton" class="btn btn-primary">Check Internet Archive</a>
+        </div>
+        <div class="card-footer text-muted">
+          Handled via Forever Bookmarks
+        </div>
+      </div>
     </div>
-    <script src="js/unavailable.js"></script>
+    <script defer src="js/unavailable.js"></script>
   </body>
 </html>
