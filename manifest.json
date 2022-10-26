@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Forever Bookmarks",
     "description": "Make your bookmarks future proof and always available even if the original site doesn't exist anymore",
-    "version": "0.0.1",
+    "version": "0.0.2",
 
     "permissions": [
         "bookmarks",
