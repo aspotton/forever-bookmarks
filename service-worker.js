@@ -53,7 +53,7 @@ function onErrorOccurred(details) {
 
   console.log(JSON.stringify(details, null, 4));
 
-  var redirect_url = chrome.runtime.getURL('html/unavailable.html') + '?url=' + details.url;
+  var redirect_url = chrome.runtime.getURL('html/unavailable.html') + '?error=' + details.error + '&url=' + details.url;
   chrome.tabs.update(details.tabId, {url: redirect_url});
 };
 
